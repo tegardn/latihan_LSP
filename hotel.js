@@ -1,8 +1,8 @@
 // Mendefinisikan variabel untuk harga kamar per malam
 const data = [
-    {sewa: '1/2 Hari', superior: '100000/Malam', deluxe: '150000/Malam', premium: '200000/Malam', fullservice:"2000000/malam"},
-    {sewa: '3/4 Hari', superior: '90000/Malam', deluxe: '135000/Malam', premium: '180000/Malam', fullservice:"2000000/malam"},
-    {sewa: '>=5 Hari', superior: '80000/Malam', deluxe: '120000/Malam', premium: '160000/Malam', fullservice:"2000000/malam"}
+    {sewa: '1/2 Hari', superior: '100000/Malam', deluxe: '150000/Malam', premium: '200000/Malam'},
+    {sewa: '3/4 Hari', superior: '90000/Malam', deluxe: '135000/Malam', premium: '180000/Malam'},
+    {sewa: '>=5 Hari', superior: '80000/Malam', deluxe: '120000/Malam', premium: '160000/Malam'}
   ];
   
 console.table(data);
@@ -13,7 +13,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-rl.question("Tipe kamar: \n 1. superior\n 2. deluxe\n 3. premium\n 4. fullservice\nPilih tipe kamar: ", (jenisKamar) => {
+rl.question("Tipe kamar: \n 1. superior\n 2. deluxe\n 3. premium\nPilih tipe kamar: ", (jenisKamar) => {
   rl.question("Masukkan lama menginap (dalam hari): ", (lamaMenginap) => {
     let hargaPerMalam = 0;
     if (jenisKamar === "1") {
