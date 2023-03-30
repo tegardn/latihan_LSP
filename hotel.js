@@ -13,7 +13,13 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-rl.question("Tipe kamar: \n 1. superior\n 2. deluxe\n 3. premium\nPilih tipe kamar: ", (jenisKamar) => {
+rl.question("Tipe kamar:\n1. superior\n2. deluxe\n3. premium\nPilih tipe kamar: ", (jenisKamar) => {
+  if (isNaN(jenisKamar) || jenisKamar < 1 || jenisKamar > 3) {
+    console.log("Pilihan yang Anda masukkan tidak valid. Silakan masukkan nomor antara 1 sampai 3.");
+    rl.close();
+    return;
+  }
+
   rl.question("Masukkan lama menginap (dalam hari): ", (lamaMenginap) => {
     let hargaPerMalam = 0;
     if (jenisKamar === "1") {
